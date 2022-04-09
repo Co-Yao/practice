@@ -1,0 +1,288 @@
+#define  _CRT_SECURE_NO_WARNINGS 1 
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<math.h>
+//int sort_int(const void* a, const void* b)
+//{
+//	return *((int*)a) - *((int*)b);
+//}
+//int main()
+//{
+//	int a, b, c = 0;
+//	scanf("%d%d%d", &a, &b, &c);
+//	int arr[] = { a,b,c };
+//	qsort(arr, sizeof(arr)/sizeof(arr[0]), sizeof(arr[0]), sort_int);
+//	printf("%d %d %d\n", arr[0], arr[1], arr[2]);
+//	return 0;
+//}
+//int main()
+//{
+//	int a, b, c = 0;
+//	scanf("%d%d%d", &a, &b, &c);
+//	if (b == 0)
+//	{
+//		printf("0\n");
+//	}
+//	else if (c % b == 0)
+//		if (a > c / b)
+//			printf("%d\n", a - (c / b));
+//		else
+//			printf("0\n");
+//	else
+//		if (a > (c / b) + 1)
+//			printf("%d\n", a - 1 - (c / b));
+//		else
+//			printf("0\n");
+//	return 0;
+//}
+//int arr1[110000] = { 0 };
+//int main()
+//{
+//	struct ln {
+//		int i;
+//		int j;
+//		int number;
+//	}ln1;
+//	ln1.i = 0, ln1.j = 0, ln1.number = 0;
+//	int n, m = 0;
+//	scanf("%d%d", &n, &m);
+//	int a = 0;
+//	for (a = 1; a <=n; a++)
+//	{
+//		scanf("%d", (arr1 + a));
+//		if (*(arr1 + a) <= m && *(arr1 + a) > ln1.number)
+//		{
+//			ln1.i = a, ln1.j = a, ln1.number = *(arr1 + a);
+//		}
+//	}
+//	int change = 0;
+//	if (ln1.number == m)
+//		change = ln1.i - 1;
+//	else
+//		change = n;
+//	int x = 0;
+//	for (x = 1; x <= change; x++)
+//	{
+//		int y = 0;
+//		int temp = arr1[x];
+//		for (y = x+1 ; y <= n; y++)
+//		{
+//			 if (temp + arr1[y] < m)
+//			{
+//				temp += arr1[y];
+//			}
+//			else if (temp + arr1[y] == m)
+//			{
+//				printf("%d %d %d\n", x, y, temp + arr1[y]);
+//				exit(0);
+//			}
+//			else if (temp + arr1[y] >m)
+//			{
+//				if (temp > ln1.number)
+//				{
+//					ln1.i = x, ln1.j = y-1, ln1.number = temp;
+//				}
+//				break;
+//			}
+//		}
+//	}
+//	printf("%d %d %d\n", ln1.i, ln1.j, ln1.number);
+//	return 0;
+//}
+//int arr1[5000000] = { 0 };
+//int main()
+//{
+//	struct ln {
+//		int i;
+//		int j;
+//		int number;
+//	}ln1;
+//	ln1.i = 0, ln1.j = 0, ln1.number = 0;
+//	int n, m = 0;
+//	scanf("%d%d", &n, &m);
+//	int a = 0;
+//	for (a = 1; a <= n; a++)
+//	{
+//		scanf("%d", (arr1 + a));
+//	}
+//	int x = 0;
+//	for (x = 1; x <= n; x++)
+//	{
+//		int y = 0;
+//		int temp = 0;
+//		for (y = x; y <= n; y++)
+//		{
+//			if (x == y)
+//			{
+//				if (arr1[x] < m)
+//					temp += arr1[x];
+//				else if (arr1[x] == m)
+//				{
+//					printf("%d %d %d\n", x, y, arr1[x]);
+//					exit(0);
+//				}
+//				else
+//					break;
+//			}
+//			else if (temp + arr1[y] < m)
+//			{
+//				temp += arr1[y];
+//			}
+//			else if (temp + arr1[y] == m)
+//			{
+//				printf("%d %d %d\n", x, y, temp + arr1[y]);
+//				exit(0);
+//			}
+//			else if (temp + arr1[y] > m)
+//			{
+//				if (temp > ln1.number)
+//				{
+//					ln1.i = x, ln1.j = y - 1, ln1.number = temp;
+//				}
+//				break;
+//			}
+//		}
+//	}
+//printf("%d %d %d\n", ln1.i, ln1.j, ln1.number);
+//return 0;
+//}
+//int arr[500000];
+//int main()
+//{
+//		struct ln {
+//		int i;
+//		int j;
+//		int number;
+//	}ln1;
+//	ln1.i = 0, ln1.j = 0, ln1.number = 0;
+//	int n, m = 0;
+//	scanf("%d%d", &n, &m);
+//	int a = 0;
+//	for (a = 1; a <= n; a++)
+//	{
+//		scanf("%d", (arr + a));
+//	}
+//	int x=1 ;
+//	int count = 1;
+//	int temp = 0;
+//	int t = 1;
+//	while (x<n+1)
+//	{
+//		for (x = t; x <= n; x++)
+//		{
+//			if (temp + arr[x] < m)
+//			{
+//				temp += arr[x];
+//			}
+//			else if (temp + arr[x] == m)
+//			{
+//				printf("%d %d %d\n", t, x, m);
+//				exit(0);
+//			}
+//			else
+//			{
+//				if (temp > ln1.number)
+//				{
+//					ln1.i = count;
+//					ln1.j = x - 1;
+//					ln1.number = temp;
+//				}
+//				temp -= arr[count];
+//				count++;
+//				t = x;
+//				break;
+//			}
+//		}
+//	}
+//	if (temp > ln1.number)
+//		printf("%d %d %d\n", count, n, temp);
+//	else
+//		printf("%d %d %d\n", ln1.i, ln1.j, ln1.number);
+//	return 0;
+//}
+//#define  _CRT_SECURE_NO_WARNINGS 1 
+//#include<stdio.h>>
+//#include<stdlib.h>
+//int arr1[5000000] = { 0 };
+//int main()
+//{
+//	struct ln {
+//		int i;
+//		int j;
+//		int number;
+//	}ln1;
+//	ln1.i = 0, ln1.j = 0, ln1.number = 0;
+//	int n, m = 0;
+//	scanf("%d%d", &n, &m);
+//	int a = 0;
+//	for (a = 1; a <= n; a++)
+//	{
+//		scanf("%d", (arr1 + a));
+//	}
+//	int x = 0;
+//	for (x = 1; x <= n; x++)
+//	{
+//		int y = 0;
+//		int temp = 0;
+//		for (y = x; y <= n; y++)
+//		{
+//			if (x == y)
+//			{
+//				if (arr1[x] < m)
+//					temp += arr1[x];
+//				else if (arr1[x] == m)
+//				{
+//					printf("%d %d %d\n", x, y, arr1[x]);
+//					exit(0);
+//				}
+//				else
+//					break;
+//			}
+//			else if (temp + arr1[y] < m)
+//			{
+//				temp += arr1[y];
+//			}
+//			else if (temp + arr1[y] == m)
+//			{
+//				printf("%d %d %d\n", x, y, temp + arr1[y]);
+//				exit(0);
+//			}
+//			else if (temp + arr1[y] > m)
+//			{
+//				if (temp > ln1.number)
+//				{
+//					ln1.i = x, ln1.j = y - 1, ln1.number = temp;
+//				}
+//				break;
+//			}
+//		}
+//		printf("%d %d %d\n", ln1.i, ln1.j, ln1.number);
+//		return 0;
+//	}
+int arr[410000];
+
+int main()
+{
+	int r, l = 1;
+	int n, m = 0;
+	scanf("%d%d", &n, &m);
+	int a, s ,sum= 0;
+	for (a = 1; a <= n; a++)
+	{
+		scanf("%d", s);
+		arr[a] = s + arr[a - 1];
+		if (arr[a] > m && arr[a - 1] < m)
+		{
+			l = 1;
+			r = a;
+			sum = arr[a - 1];
+		}
+		else if (arr[a] == m)
+			printf("%d %d %d\n", 1, a, arr[a]);
+	}
+	while(l<=r)
+		if (arr[r] - arr[l] < m)
+			r++;
+		else if(arr[r]-arr[l]>m
+}

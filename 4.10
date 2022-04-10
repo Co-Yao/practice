@@ -1,0 +1,77 @@
+#define  _CRT_SECURE_NO_WARNINGS 1 
+#include<stdio.h>>
+#include<stdlib.h>
+//int arr[5000000] = { 0 };
+//int main()
+//{
+//	int n, m, a = 0;
+//	scanf("%d%d", &n, &m);
+//
+//	for (a = 1; a <= n; a++)
+//	{
+//		scanf("%d", arr + a);
+//	}
+//	int l = 1, r = 0, max_l = 1;
+//	long int sum = 0, max_number = 0;
+//	int i = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		if (sum + arr[i] < m)
+//		{
+//			sum += arr[i];
+//		}
+//		else if (sum + arr[i] == m)
+//		{
+//			r = i;
+//			max_l = l;
+//			max_number = sum + arr[i];
+//			break;
+//		}
+//		else
+//		{
+//			if (sum > max_number)
+//			{
+//				r = i - 1;
+//				max_l = l;
+//				max_number = sum;
+//			}
+//			sum = sum - arr[l];
+//			i--;
+//			l++;
+//		}
+//	}
+//	if (sum > m)
+//	{
+//		l++;
+//		if (sum - arr[l] <= m && sum - arr[l] > max_number)
+//		{
+//			r = n;
+//			max_l = l;
+//			max_number = sum - arr[l];
+//		}
+//	}
+//	if (sum < m && max_l == 1)
+//	{
+//		r = n;
+//		max_number = sum;
+//	}
+//	printf("%d %d %d", max_l, r, max_number);
+// return 0;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i, j = 0;
+//	int sum = 1;
+//	for (i = 0; i < n; i++)
+//	{
+//		for (j = i; j < n; j++)
+//		{
+//			printf("%02d", sum);
+//			sum++;
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
